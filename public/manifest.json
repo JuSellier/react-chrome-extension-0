@@ -7,7 +7,7 @@
   "icons": {
     "128": "logo128.png"
   },
-  "permissions": [],
+  "permissions": [""],
   "background": {
     "scripts": ["background.js"],
     "persistent": true

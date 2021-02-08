@@ -1,3 +1,7 @@
+body {
+  min-width: 500px;
+}
+
 .Popup {
   min-height: 200px;
   min-width: 200px;
@@ -19,6 +23,13 @@
     flex-grow: 1;
     box-shadow: 0 0 0 1px #80808050;
     padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+
+    max-height: 600px;
+    overflow: scroll;
   }
 
   &-Controls {
@@ -27,5 +38,12 @@
     column-gap: 10px;
     row-gap: 10px;
     flex-wrap: wrap;
+    justify-content: space-between;
+
+    box-shadow: 0 0 5px #000000aa;
+
+    &-Settings {
+      box-shadow: none;
+    }
   }
 }
