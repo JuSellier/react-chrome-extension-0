@@ -1,0 +1,31 @@
+.Popup {
+  min-height: 200px;
+  min-width: 200px;
+
+  background-color: #282c34;
+  color: #f3f3f0;
+
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    font-size: 1.2rem;
+    font-weight: 100;
+    // text-align: center;
+    padding: 5px 10px;
+  }
+
+  &-Transcript {
+    flex-grow: 1;
+    box-shadow: 0 0 0 1px #80808050;
+    padding: 10px;
+  }
+
+  &-Controls {
+    padding: 10px;
+    display: flex;
+    column-gap: 10px;
+    row-gap: 10px;
+    flex-wrap: wrap;
+  }
+}

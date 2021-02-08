@@ -1,16 +1,15 @@
 {
-  "name": "Awesome Extension",
+  "short_name": "V2T",
+  "name": "Voice to Text for Chrome",
   "version": "0.0.1",
   "manifest_version": 2,
-  "description": "create-react-app for extensions",
+  "description": "Simple voice to text in the browser",
   "icons": {
     "128": "logo128.png"
   },
   "permissions": [],
   "background": {
-    "scripts": [
-      "background.js"
-    ],
+    "scripts": ["background.js"],
     "persistent": true
   },
   "browser_action": {

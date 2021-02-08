@@ -1,0 +1,30 @@
+html {
+  --clr-black: #1f2020;
+  --clr-white: #f0f0f3;
+  --clr-blue: #0077ff;
+}
+
+body {
+  background: var(--clr-black);
+}
+
+.Options {
+  header {
+    padding: 10px;
+
+    h1 {
+      font-weight: 100;
+    }
+  }
+
+  main {
+    padding: 10px;
+  }
+}
+
+.Options-Main {
+  &-Language {
+    display: flex;
+    flex-direction: column;
+  }
+}
