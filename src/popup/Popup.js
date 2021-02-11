@@ -5,13 +5,14 @@ import "./Popup.scss";
 
 function Popup() {
   const [password, setPassword] = useState("");
-  const [passwordLength, setPasswordLength] = useState(
-    +chrome.storage.getItem("length") || 20
-  ); // default number of character
+  const [passwordLength, setPasswordLength] = useState(20); // default number of character
 
   const copyEl = useRef();
 
   useEffect(() => {
+    chrome.storage.sync.get(["key"], function (result) {
+      console.log(result);
+    });
     changePassword();
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -62,7 +63,9 @@ function Popup() {
 
   function changePasswordLength(e) {
     setPasswordLength(e.target.value);
-    chrome.storage.setItem("length", e.target.value);
+    chrome.storage.sync.set({ length: e.target.value }, function () {
+      console.log("Length is set to " + e.target.value);
+    });
   }
   return (
     <div className="Popup">
