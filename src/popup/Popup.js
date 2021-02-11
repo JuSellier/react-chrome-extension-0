@@ -10,7 +10,7 @@ function Popup() {
   const copyEl = useRef();
 
   useEffect(() => {
-    chrome.storage.sync.get(["key"], function (result) {
+    chrome.storage.sync.get(["length"], function (result) {
       console.log(result);
     });
     changePassword();
