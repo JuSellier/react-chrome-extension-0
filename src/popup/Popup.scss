@@ -30,6 +30,8 @@ body {
     padding: 10px;
 
     &-Copy {
+      transition: background 0.1s linear;
+
       &.copied {
         background: #73ff67;
       }
