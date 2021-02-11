@@ -5,13 +5,13 @@ import "./Popup.scss";
 
 function Popup() {
   const [password, setPassword] = useState("");
-  const [passwordLength, setPasswordLength] = useState(); // number of character
+  const [passwordLength, setPasswordLength] = useState(
+    +localStorage.getItem("length") || 20
+  ); // number of character
 
   const copyEl = useRef();
 
   useEffect(() => {
-    const lengthPref = localStorage.getItem("length") || 20;
-    setPasswordLength(+lengthPref);
     changePassword();
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
