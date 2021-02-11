@@ -15,10 +15,13 @@ function Popup() {
   const copyEl = useRef();
 
   useEffect(() => {
-    changePassword();
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // changePassword();
   }, []);
+
+  useEffect(() => {
+    changePassword();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [passwordLength]);
 
   // returns all possible characters to use in a password
   function getPossibleChars() {
@@ -65,11 +68,7 @@ function Popup() {
 
   function changePasswordLength(e) {
     localStorage.setItem("length", e.target.value);
-    setPasswordLength(
-      () => e.target.value,
-      () => alert(passwordLength)
-      // () => changePassword()
-    );
+    setPasswordLength(() => e.target.value);
   }
 
   return (
