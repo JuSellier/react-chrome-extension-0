@@ -3,6 +3,9 @@ import React, { useState, useEffect, useRef } from "react";
 import "../styles/defaults.scss";
 import "./Popup.scss";
 
+import { HiOutlineClipboardCopy as CopyIcon } from "react-icons/hi";
+import { MdAutorenew as NewIcon } from "react-icons/md";
+
 function Popup() {
   const [password, setPassword] = useState("");
   const [passwordLength, setPasswordLength] = useState(
@@ -77,6 +80,7 @@ function Popup() {
           className="Popup-Password-Copy"
           onClick={copyPassword}
         >
+          <CopyIcon />
           Copy
         </button>
       </div>
@@ -92,6 +96,7 @@ function Popup() {
         </div>
 
         <button onClick={changePassword} className="Popup-Controls-New">
+          <NewIcon />
           New password
         </button>
       </div>
