@@ -4,7 +4,9 @@ import "./Popup.scss";
 
 function Popup() {
   const [password, setPassword] = useState("");
-  const [passwordLength, setPasswordLength] = useState(16); // default number of character is 16
+  const [passwordLength, setPasswordLength] = useState(
+    +chrome.storage.getItem("length") || 20
+  ); // default number of character
 
   const copyEl = useRef();
 
@@ -56,6 +58,11 @@ function Popup() {
       }
     });
   }
+
+  function changePasswordLength(e) {
+    setPasswordLength(e.target.value);
+    chrome.storage.setItem("length", e.target.value);
+  }
   return (
     <div className="Popup">
       <div className="Popup-Password">
@@ -79,7 +86,7 @@ function Popup() {
           <input
             type="number"
             value={passwordLength}
-            onChange={(e) => setPasswordLength(e.target.value)}
+            onChange={changePasswordLength}
           ></input>
         </div>
 
