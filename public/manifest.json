@@ -7,7 +7,7 @@
   "icons": {
     "128": "logo128.png"
   },
-  "permissions": ["clipboardWrite"],
+  "permissions": ["clipboardWrite", "storage"],
   "background": {
     "scripts": ["background.js"],
     "persistent": true
