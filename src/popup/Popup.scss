@@ -50,6 +50,12 @@ body {
 
     box-shadow: 0 0 5px #000000aa;
 
+    &-Length {
+      display: flex;
+      align-items: center;
+      column-gap: 5px;
+    }
+
     &-New {
       box-shadow: none;
     }
