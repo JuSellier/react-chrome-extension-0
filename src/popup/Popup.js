@@ -66,7 +66,9 @@ function Popup() {
   function changePasswordLength(e) {
     setPasswordLength(e.target.value);
     localStorage.setItem("length", e.target.value);
+    changePassword();
   }
+
   return (
     <div className="Popup">
       <div className="Popup-Password">
