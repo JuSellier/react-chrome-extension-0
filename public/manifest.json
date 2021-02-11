@@ -1,13 +1,13 @@
 {
-  "short_name": "V2T",
-  "name": "Voice to Text for Chrome",
+  "short_name": "NeoPass",
+  "name": "NeoPass - Password generator for Chrome",
   "version": "0.0.1",
   "manifest_version": 2,
-  "description": "Simple voice to text in the browser",
+  "description": "NeoPass - Simple Password Generator. Easy to use, hard to guess.",
   "icons": {
     "128": "logo128.png"
   },
-  "permissions": ["audioCapture"],
+  "permissions": ["clipboardWrite"],
   "background": {
     "scripts": ["background.js"],
     "persistent": true

@@ -19,6 +19,11 @@ body {
     padding: 5px 10px;
   }
 
+  input {
+    background: none;
+    border: none;
+  }
+
   &-Password {
     flex-grow: 1;
     box-shadow: 0 0 0 1px #80808050;

@@ -31,26 +31,41 @@ function Popup() {
     return str;
   }
 
+  function copyPassword() {
+    navigator.permissions.query({ name: "clipboard-write" }).then((result) => {
+      if (result.state === "granted" || result.state === "prompt") {
+        /* write to the clipboard now */
+        navigator.clipboard.writeText(password).then(
+          function () {
+            /* clipboard successfully set */
+          },
+          function () {
+            /* clipboard write failed */
+          }
+        );
+      }
+    });
+  }
   return (
     <div className="Popup">
       <div className="Popup-Password">
-        <input type="text" value={password} readOnly></input>
+        <input type="text" value={password}></input>
+        <button className="Popup-Controls-Copy" onClick={copyPassword}>
+          Copy
+        </button>
       </div>
 
       <div className="Popup-Controls">
-        <button className="Popup-Controls-Copy" onClick={changePassword}>
-          Copy
-        </button>
-
         <input
           type="number"
           className="Popup-Controls-Length"
-          onClick={changePassword}
           value={passwordLength}
           onChange={(e) => setPasswordLength(e.target.value)}
         ></input>
 
-        <button className="Popup-Controls-New">New password</button>
+        <button onClick={changePassword} className="Popup-Controls-New">
+          New password
+        </button>
       </div>
     </div>
   );
