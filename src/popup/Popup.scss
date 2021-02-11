@@ -10,9 +10,12 @@ body {
   color: #f3f3f0;
 
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
 
   &-Password {
+    display: flex;
+    justify-content: space-between;
+
     box-shadow: 0 0 0 1px #80808050;
     padding: 10px;
 
