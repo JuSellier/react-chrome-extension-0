@@ -11,7 +11,7 @@ function Popup() {
 
   useEffect(() => {
     const lengthPref = localStorage.getItem("length") || 20;
-    setPasswordLength(() => +lengthPref);
+    setPasswordLength(+lengthPref);
     changePassword();
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
