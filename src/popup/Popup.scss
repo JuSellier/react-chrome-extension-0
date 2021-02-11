@@ -17,6 +17,10 @@ body {
     border: none;
     width: 100%;
 
+    &:focus {
+      outline: #45ac30;
+    }
+
     &[type="number"] {
       max-width: 5ch;
     }
