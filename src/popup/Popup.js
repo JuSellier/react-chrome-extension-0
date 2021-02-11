@@ -70,10 +70,12 @@ function Popup() {
   function changePasswordLength(e) {
     const length = e.target.value;
 
-    if (length < 1 || length >= Number.MAX_SAFE_INTEGER) return;
-
-    localStorage.setItem("length", length);
-    setPasswordLength(() => length);
+    if (length < 1 || length >= Number.MAX_SAFE_INTEGER || !length) {
+      setPasswordLength(() => 1);
+    } else {
+      localStorage.setItem("length", length);
+      setPasswordLength(() => length);
+    }
   }
 
   return (
