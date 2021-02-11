@@ -75,7 +75,7 @@ function Popup() {
 
       <div className="Popup-Controls">
         <div className="Popup-Controls-Length">
-          <label>Length</label>
+          <label>Password length:</label>
           <input
             type="number"
             value={passwordLength}

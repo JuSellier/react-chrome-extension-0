@@ -18,7 +18,7 @@ body {
     width: 100%;
 
     &[type="number"] {
-      max-width: 10ch;
+      max-width: 5ch;
     }
   }
 
@@ -53,7 +53,7 @@ body {
     &-Length {
       display: flex;
       align-items: center;
-      column-gap: 5px;
+      column-gap: 10px;
     }
 
     &-New {
