@@ -62,7 +62,7 @@ function Popup() {
         ></input>
         <button
           ref={copyEl}
-          className="Popup-Controls-Copy"
+          className="Popup-Password-Copy"
           onClick={copyPassword}
         >
           Copy

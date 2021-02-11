@@ -3,37 +3,29 @@ body {
 }
 
 .Popup {
-  min-height: 200px;
+  // min-height: 200px;
   min-width: 200px;
 
   background-color: #282c34;
   color: #f3f3f0;
 
   display: flex;
-  flex-direction: column;
-
-  input {
-    background: none;
-    border: none;
-  }
-
-  &-Copy {
-    &.copied {
-      background: green;
-    }
-  }
+  justify-content: space-between;
 
   &-Password {
-    flex-grow: 1;
     box-shadow: 0 0 0 1px #80808050;
     padding: 10px;
 
-    display: flex;
-    flex-direction: column;
-    row-gap: 10px;
+    input {
+      background: none;
+      border: none;
+    }
 
-    max-height: 600px;
-    overflow: scroll;
+    &-Copy {
+      &.copied {
+        background: green;
+      }
+    }
   }
 
   &-Controls {
