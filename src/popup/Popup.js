@@ -10,9 +10,9 @@ function Popup() {
   const copyEl = useRef();
 
   useEffect(() => {
-    chrome.storage.sync.get(["length"], function (result) {
-      console.log(result);
-    });
+    // chrome.storage.sync.get(["length"], function (result) {
+    //   console.log(result);
+    // });
     changePassword();
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
