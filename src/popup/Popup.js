@@ -72,7 +72,6 @@ function Popup() {
 
     if (length < 1 || length >= Number.MAX_SAFE_INTEGER || !length) {
       setPasswordLength(() => null);
-      e.preventDefault();
     } else {
       localStorage.setItem("length", length);
       setPasswordLength(() => length);
@@ -102,6 +101,7 @@ function Popup() {
           <label>Password length:</label>
           <input
             type="number"
+            min="1"
             value={passwordLength}
             onChange={changePasswordLength}
           ></input>
