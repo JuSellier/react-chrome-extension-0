@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "../styles/defaults.scss";
 import "./Popup.scss";
 
 function Popup() {
   const [password, setPassword] = useState("");
   const [passwordLength, setPasswordLength] = useState(16); // default number of character is 16
+
+  const copyEl = useRef();
 
   useEffect(() => {
     changePassword();
@@ -38,6 +40,10 @@ function Popup() {
         navigator.clipboard.writeText(password).then(
           function () {
             /* clipboard successfully set */
+            copyEl.current.classList.add("copied");
+            setTimeout(() => {
+              copyEl.current.classList.remove("copied");
+            }, 200);
           },
           function () {
             /* clipboard write failed */
@@ -49,8 +55,16 @@ function Popup() {
   return (
     <div className="Popup">
       <div className="Popup-Password">
-        <input type="text" value={password}></input>
-        <button className="Popup-Controls-Copy" onClick={copyPassword}>
+        <input
+          type="text"
+          value={password}
+          onChange={(e) => setPassword(() => e.target.value)}
+        ></input>
+        <button
+          ref={copyEl}
+          className="Popup-Controls-Copy"
+          onClick={copyPassword}
+        >
           Copy
         </button>
       </div>
