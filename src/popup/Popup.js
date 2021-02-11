@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import React, { useState, useEffect, useRef } from "react";
 import "../styles/defaults.scss";
 import "./Popup.scss";
@@ -73,6 +72,7 @@ function Popup() {
 
     if (length < 1 || length >= Number.MAX_SAFE_INTEGER || !length) {
       setPasswordLength(() => null);
+      e.preventDefault();
     } else {
       localStorage.setItem("length", length);
       setPasswordLength(() => length);
