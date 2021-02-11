@@ -31,7 +31,11 @@ body {
 
     &-Copy {
       &.copied {
-        background: green;
+        background: #73ff67;
+      }
+
+      &.error {
+        background: #ff6767;
       }
     }
   }

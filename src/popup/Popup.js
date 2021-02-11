@@ -47,6 +47,10 @@ function Popup() {
           },
           function () {
             /* clipboard write failed */
+            copyEl.current.classList.add("error");
+            setTimeout(() => {
+              copyEl.current.classList.remove("error");
+            }, 200);
           }
         );
       }
@@ -70,12 +74,14 @@ function Popup() {
       </div>
 
       <div className="Popup-Controls">
-        <input
-          type="number"
-          className="Popup-Controls-Length"
-          value={passwordLength}
-          onChange={(e) => setPasswordLength(e.target.value)}
-        ></input>
+        <div className="Popup-Controls-Length">
+          <label>Length</label>
+          <input
+            type="number"
+            value={passwordLength}
+            onChange={(e) => setPasswordLength(e.target.value)}
+          ></input>
+        </div>
 
         <button onClick={changePassword} className="Popup-Controls-New">
           New password
