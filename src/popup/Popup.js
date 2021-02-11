@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import React, { useState, useEffect, useRef } from "react";
 import "../styles/defaults.scss";
 import "./Popup.scss";
