@@ -12,17 +12,21 @@ body {
   display: flex;
   flex-direction: column;
 
+  input {
+    background: none;
+    border: none;
+
+    &[type="number"] {
+      max-width: 10ch;
+    }
+  }
+
   &-Password {
     display: flex;
     justify-content: space-between;
 
     box-shadow: 0 0 0 1px #80808050;
     padding: 10px;
-
-    input {
-      background: none;
-      border: none;
-    }
 
     &-Copy {
       &.copied {
