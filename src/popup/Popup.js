@@ -19,6 +19,7 @@ function Popup() {
   }, []);
 
   useEffect(() => {
+    if (!passwordLength) return;
     changePassword();
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -71,7 +72,7 @@ function Popup() {
     const length = e.target.value;
 
     if (length < 1 || length >= Number.MAX_SAFE_INTEGER || !length) {
-      setPasswordLength(() => 1);
+      setPasswordLength(() => null);
     } else {
       localStorage.setItem("length", length);
       setPasswordLength(() => length);
