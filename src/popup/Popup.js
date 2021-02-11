@@ -67,7 +67,8 @@ function Popup() {
     localStorage.setItem("length", e.target.value);
     setPasswordLength(
       () => e.target.value,
-      () => changePassword()
+      alert(passwordLength)
+      // () => changePassword()
     );
   }
 
