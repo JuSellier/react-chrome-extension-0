@@ -25,10 +25,11 @@ function Popup() {
       {
         text:
           "Ttest texttest texttest texttest texttest texttest texttest texttest texttest texttest texttest textst texttest texttest texttest text",
-        date: "12/01/2020",
+        date: "11/01/2020",
         time: "12:00",
       },
     ]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function micClick() {
