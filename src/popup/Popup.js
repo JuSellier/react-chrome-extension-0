@@ -1,103 +1,56 @@
 import React, { useState, useEffect } from "react";
 import "../styles/defaults.scss";
 import "./Popup.scss";
-import TextBlock from "../components/TextBlock/TextBlock";
-
-import { BsMicFill as MicOnIcon } from "react-icons/bs";
-import { BsMicMuteFill as MicOffIcon } from "react-icons/bs";
-import { RiSettings3Fill as SettingsIcon } from "react-icons/ri";
 
 function Popup() {
-  const [recording, setRecording] = useState(false);
-  const [transcript, setTranscript] = useState([]);
+  const [password, setPassword] = useState("");
+  const [passwordLength, setPasswordLength] = useState(16); // default number of character is 16
 
   useEffect(() => {
-    console.log(transcript);
-    // update transcript in chrome.storage
+    changePassword();
 
-    setTranscript(() => [
-      {
-        text:
-          "Ttest texttest texttest texttest texttest texttest texttest texttest texttest texttest texttest textst texttest texttest texttest text",
-        date: "12/01/2020",
-        time: "12:00",
-      },
-      {
-        text:
-          "Ttest texttest texttest texttest texttest texttest texttest texttest texttest texttest texttest textst texttest texttest texttest text",
-        date: "11/01/2020",
-        time: "12:00",
-      },
-    ]);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  function micClick() {
-    console.log(recording);
-    if (recording) {
-      setRecording(() => false);
-    } else {
-      setRecording(() => true);
-      newSpeechRec();
-    }
+  // returns all possible characters to use in a password
+  function getPossibleChars() {
+    const letters = `abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ`;
+    const digits = `0123456789`;
+    const specialCharacters = `!"#$%&'()*+,-./:;<=>?@[\\]^_\`{|}~`;
+    return letters + digits + specialCharacters;
   }
 
-  function newSpeechRec() {
-    console.log("new speech rec called");
-    const speechRecognition =
-      window.webkitSpeechRecognition || window.SpeechRecognition;
-    if (!speechRecognition) {
-      return console.log("Speech recognition is undefined");
+  function changePassword() {
+    const chars = getPossibleChars();
+    let str = "";
+    for (let i = 0; i < passwordLength; i++) {
+      const randInt = Math.floor(Math.random() * chars.length);
+      str += chars[randInt];
     }
-    const recognition = new speechRecognition();
-
-    recognition.continuous = true;
-    recognition.interimResults = true;
-    recognition.lang = "en-US";
-
-    recognition.onstart = function (event) {
-      console.log(event, "rec started");
-    };
-
-    recognition.onresult = function (event) {
-      console.log(event, "rec result");
-    };
-    recognition.onerror = function (event) {
-      console.log(event, "rec error");
-    };
-    recognition.onend = function (event) {
-      console.log(event, "rec end");
-    };
-
-    recognition.start();
-
-    return recognition;
+    setPassword(() => str);
+    return str;
   }
 
   return (
     <div className="Popup">
-      <div className="Popup-Transcript">
-        {transcript.length > 0 ? (
-          transcript.map((data, index) => {
-            return <TextBlock {...data} key={index} />;
-          })
-        ) : (
-          <div className="Popup-Transcript-Empty">
-            No text to show yet.
-            <br />
-            Press the button below to start...
-          </div>
-        )}
+      <div className="Popup-Password">
+        <input type="text" value={password} readOnly></input>
       </div>
 
       <div className="Popup-Controls">
-        <button className="Popup-Controls-Mic" onClick={micClick}>
-          {recording ? <MicOffIcon /> : <MicOnIcon />}
+        <button className="Popup-Controls-Copy" onClick={changePassword}>
+          Copy
         </button>
 
-        <button className="Popup-Controls-Settings">
-          <SettingsIcon />
-        </button>
+        <input
+          type="number"
+          className="Popup-Controls-Length"
+          onClick={changePassword}
+          value={passwordLength}
+          onChange={(e) => setPasswordLength(e.target.value)}
+        ></input>
+
+        <button className="Popup-Controls-New">New password</button>
       </div>
     </div>
   );
