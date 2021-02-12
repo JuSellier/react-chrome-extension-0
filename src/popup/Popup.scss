@@ -19,9 +19,8 @@ body {
     outline: none;
 
     &[type="number"] {
-      border-radius: 15px;
-      box-shadow: 0 0 0 1px #80808050;
       max-width: 5ch;
+      padding: 4px 8px;
     }
   }
 
@@ -59,6 +58,14 @@ body {
       display: flex;
       align-items: center;
       column-gap: 10px;
+
+      label {
+        cursor: pointer;
+      }
+
+      input[type="number"] {
+        font-weight: 700;
+      }
     }
 
     &-New {
