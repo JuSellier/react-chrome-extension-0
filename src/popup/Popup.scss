@@ -27,6 +27,7 @@ body {
     padding: 10px;
 
     input {
+      font-weight: 100;
     }
 
     &-Copy {
@@ -66,7 +67,7 @@ body {
       }
 
       input[type="number"] {
-        font-weight: 700;
+        font-weight: 300;
         max-width: 8ch;
         padding: 4px 8px;
         text-align: left;
