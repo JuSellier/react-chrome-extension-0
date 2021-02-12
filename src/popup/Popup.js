@@ -35,7 +35,11 @@ function Popup() {
   function changePassword() {
     const chars = getPossibleChars();
     let str = "";
-    for (let i = 0; i < passwordLength; i++) {
+
+    let l = passwordLength;
+    if (!l) l = 20; // if password length is undefined when clicking "new password", we generate a 20char password instead of nothing
+
+    for (let i = 0; i < l; i++) {
       const randInt = Math.floor(Math.random() * chars.length);
       str += chars[randInt];
     }
@@ -81,11 +85,7 @@ function Popup() {
   return (
     <div className="Popup">
       <div className="Popup-Password">
-        <input
-          type="text"
-          value={password}
-          onChange={(e) => setPassword(() => e.target.value)}
-        ></input>
+        <input type="text" value={password}></input>
         <button
           ref={copyEl}
           className="Popup-Password-Copy"
