@@ -52,18 +52,19 @@ body {
     &-Length {
       display: flex;
       align-items: center;
-      column-gap: 10px;
+      // column-gap: 5px;
 
       border-radius: 5px;
       box-shadow: 0 0 0 1px #80808050;
 
       label {
         cursor: pointer;
+        padding: 4px 8px;
       }
 
       input[type="number"] {
         font-weight: 700;
-        max-width: 5ch;
+        max-width: 8ch;
         padding: 4px 8px;
         text-align: left;
       }
