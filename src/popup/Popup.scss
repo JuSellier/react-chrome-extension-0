@@ -31,12 +31,13 @@ body {
     }
 
     &-Copy {
-      transition: background-position 0.1s linear;
+      transition: background-position 1s linear;
       background-image: linear-gradient(110deg, #30aca20c, #a830ac);
       background-size: 300%;
       background-position: left;
 
       &:hover {
+        background: none;
         background-position: right;
       }
 
