@@ -82,10 +82,19 @@ function Popup() {
     }
   }
 
+  function handlePasswordChange(e) {
+    const newPassword = e.target.value;
+    setPassword(() => newPassword);
+  }
+
   return (
     <div className="Popup">
       <div className="Popup-Password">
-        <input type="text" value={password}></input>
+        <input
+          type="text"
+          value={password}
+          onChange={handlePasswordChange}
+        ></input>
         <button
           ref={copyEl}
           className="Popup-Password-Copy"
