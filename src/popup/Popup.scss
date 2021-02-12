@@ -37,12 +37,11 @@ body {
       background-position: left;
 
       &:hover {
-        background: none;
+        background-position: right;
       }
 
       &.copied {
         background-image: linear-gradient(110deg, #30aca2, #a830ac);
-        background-position: right;
       }
 
       &.error {
