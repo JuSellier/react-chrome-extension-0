@@ -44,7 +44,7 @@ body {
     display: flex;
     column-gap: 10px;
     row-gap: 10px;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
     justify-content: space-between;
 
     box-shadow: 0 0 5px #000000aa;
@@ -64,7 +64,7 @@ body {
 
       input[type="number"] {
         font-weight: 700;
-        width: max-content;
+        width: min-content;
         padding: 4px 8px;
         text-align: left;
       }
