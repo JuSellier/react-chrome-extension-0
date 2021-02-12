@@ -17,11 +17,6 @@ body {
     border: none;
     width: 100%;
     outline: none;
-
-    &[type="number"] {
-      max-width: 5ch;
-      padding: 4px 8px;
-    }
   }
 
   &-Password {
@@ -59,12 +54,18 @@ body {
       align-items: center;
       column-gap: 10px;
 
+      border-radius: 5px;
+      box-shadow: 0 0 0 1px #80808050;
+
       label {
         cursor: pointer;
       }
 
       input[type="number"] {
         font-weight: 700;
+        max-width: 5ch;
+        padding: 4px 8px;
+        text-align: left;
       }
     }
 
