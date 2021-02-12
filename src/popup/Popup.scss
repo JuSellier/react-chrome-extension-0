@@ -19,6 +19,8 @@ body {
     outline: none;
 
     &[type="number"] {
+      border-radius: 15px;
+      box-shadow: 0 0 0 1px #80808050;
       max-width: 5ch;
     }
   }
