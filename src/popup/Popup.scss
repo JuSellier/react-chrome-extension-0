@@ -40,10 +40,9 @@ body {
   }
 
   &-Controls {
-    padding: 10px;
+    padding: 10px 0;
     display: grid;
     grid-template-columns: 1fr auto;
-    column-gap: 10px;
     row-gap: 10px;
 
     box-shadow: 0 0 5px #000000aa;
@@ -55,6 +54,7 @@ body {
 
       border-radius: 5px;
       box-shadow: 0 0 0 1px #80808050;
+      margin: 0 10px;
 
       label {
         cursor: pointer;
@@ -70,6 +70,8 @@ body {
     }
 
     &-New {
+      margin: 0 10px;
+      padding: 4px 8px;
       flex-grow: 1;
       box-shadow: none;
     }
