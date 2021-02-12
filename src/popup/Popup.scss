@@ -36,6 +36,10 @@ body {
       background-size: 300%;
       background-position: left;
 
+      &:hover {
+        background-image: linear-gradient(110deg, #30aca2, #a830ac);
+      }
+
       &.copied {
         background-image: linear-gradient(110deg, #45ac30, #30aca2, #a830ac);
         background-position: right;
