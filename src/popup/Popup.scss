@@ -41,11 +41,10 @@ body {
 
   &-Controls {
     padding: 10px;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto;
     column-gap: 10px;
     row-gap: 10px;
-    // flex-wrap: wrap;
-    justify-content: space-between;
 
     box-shadow: 0 0 5px #000000aa;
 
