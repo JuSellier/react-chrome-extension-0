@@ -64,13 +64,14 @@ body {
 
       input[type="number"] {
         font-weight: 700;
-        width: min-content;
+        max-width: max-content;
         padding: 4px 8px;
         text-align: left;
       }
     }
 
     &-New {
+      flex-grow: 1;
       box-shadow: none;
     }
   }
