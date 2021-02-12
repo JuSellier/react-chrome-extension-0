@@ -14,10 +14,6 @@ function Popup() {
   const copyEl = useRef();
 
   useEffect(() => {
-    // changePassword();
-  }, []);
-
-  useEffect(() => {
     if (!passwordLength) return;
     changePassword();
 
