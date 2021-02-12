@@ -106,6 +106,11 @@ function Popup() {
       </div>
 
       <div className="Popup-Controls">
+        <button onClick={changePassword} className="Popup-Controls-New">
+          <NewIcon />
+          New password
+        </button>
+
         <div className="Popup-Controls-Length">
           <label htmlFor="length">Password length:</label>
           <input
@@ -116,11 +121,6 @@ function Popup() {
             onChange={changePasswordLength}
           ></input>
         </div>
-
-        <button onClick={changePassword} className="Popup-Controls-New">
-          <NewIcon />
-          New password
-        </button>
       </div>
     </div>
   );

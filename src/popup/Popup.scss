@@ -64,7 +64,7 @@ body {
 
       input[type="number"] {
         font-weight: 700;
-        max-width: 8ch;
+        width: max-content;
         padding: 4px 8px;
         text-align: left;
       }
