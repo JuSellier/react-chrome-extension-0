@@ -31,10 +31,14 @@ body {
     }
 
     &-Copy {
-      transition: background 0.1s linear;
+      transition: background-position 0.1s linear;
+      background-image: linear-gradient(110deg, #30aca2, #a830ac);
+      background-size: 300%;
+      background-position: left;
 
       &.copied {
-        background: #45ac30;
+        background-image: linear-gradient(110deg, #45ac30, #30aca2, #a830ac);
+        background-position: right;
       }
 
       &.error {

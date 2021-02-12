@@ -46,17 +46,14 @@ function Popup() {
   function copyPassword() {
     navigator.permissions.query({ name: "clipboard-write" }).then((result) => {
       if (result.state === "granted" || result.state === "prompt") {
-        /* write to the clipboard now */
         navigator.clipboard.writeText(password).then(
           function () {
-            /* clipboard successfully set */
             copyEl.current.classList.add("copied");
             setTimeout(() => {
               copyEl.current.classList.remove("copied");
             }, 200);
           },
           function () {
-            /* clipboard write failed */
             copyEl.current.classList.add("error");
             setTimeout(() => {
               copyEl.current.classList.remove("error");
